@@ -35,7 +35,7 @@ resource "aws_lambda_function" "api_authorizer" {
 
   environment {
     variables = {
-      IP_RANGE = jsonencode(var.allowed_ips)
+      IP_RANGE = jsonencode(local.combined_ip_whitelist)
     }
   }
 }

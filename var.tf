@@ -19,8 +19,14 @@ variable "domain_name" {
   type        = string
 }
 
-variable "allowed_ips" {
+variable "ip_whitelist" {
   description = "List of allowed IP addresses/CIDR blocks"
   type        = list(string)
   default     = []
+}
+
+variable "bastion" {
+  description = "Bastion instance name pattern for dynamic IP collection"
+  type        = string
+  default     = "bastion"
 }
